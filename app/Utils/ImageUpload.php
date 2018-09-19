@@ -45,7 +45,7 @@ class ImageUpload{
         $filename = $this->buildPasteFileName($extension);
         file_put_contents($destDirectory.$filename,$real_data);
         $clientSize = filesize($destDirectory.$filename);
-        return  ['status'=>0,'imgurl'=>'thumb' . DIRECTORY_SEPARATOR . $subDirectory . $filename];
+        return  ['status'=>0,'imgurl'=>$subDirectory . $filename];
     }
     
     private function buildPasteFileName($extension){
