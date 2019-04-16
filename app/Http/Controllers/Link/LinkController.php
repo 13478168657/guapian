@@ -16,7 +16,7 @@ class LinkController extends Controller
         if($request->input('name')){
             $link = $link->where('name','like','%'.$request->input('name').'%');
         }
-        $links = $link->paginate(15);
+        $links = $link->paginate(30);
         return view('links.index',['links'=>$links,'request'=>$request]);
     }
 
